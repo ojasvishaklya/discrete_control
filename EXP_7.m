@@ -1,0 +1,11 @@
+num=[1.57];
+den=[1 1 0];
+sys=tf(num,den);
+[Gm,Pm,Wcp,Wcg]=margin(sys);
+sys_d1=c2d(sys,1.57,'zoh');
+sys_d2=c2d(sys,1,'zoh');
+hold on;
+bode(sys);
+bode(sys_d1);
+bode(sys_d2);
+legend('CTS','DTS=1.57','DTS=1');
